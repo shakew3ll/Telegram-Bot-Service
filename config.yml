@@ -1,0 +1,8 @@
+is_debug: true
+listen:
+  type: port
+  host: 127.0.0.1
+  port: 30001
+logging:
+  writer: stdout
+  level: trace
