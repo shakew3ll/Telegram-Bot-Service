@@ -3,14 +3,16 @@ package config
 import (
 	"log"
 	"os"
+	"time"
 
 	"github.com/ilyakaznacheev/cleanenv"
 )
 
 type Config struct {
-	IsDebug bool         `yaml:"is_debug"`
-	Listen  ListenConfig `yaml:"listen"`
-	Logger  LoggerConfig `yaml:"logging"`
+	IsDebug bool          `yaml:"is_debug"`
+	Listen  ListenConfig  `yaml:"listen"`
+	Logger  LoggerConfig  `yaml:"logging"`
+	Timeout TimeoutConfig `yaml:"timeout"`
 }
 
 type ListenConfig struct {
@@ -22,6 +24,10 @@ type ListenConfig struct {
 type LoggerConfig struct {
 	Writer string `yaml:"writer"`
 	Level  string `yaml:"level"`
+}
+
+type TimeoutConfig struct {
+	Value time.Duration `yaml:"value"`
 }
 
 func New() (Config, error) {

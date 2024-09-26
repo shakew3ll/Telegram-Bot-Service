@@ -6,3 +6,5 @@ listen:
 logging:
   writer: stdout
   level: trace
+timeout:
+    value: 5s
